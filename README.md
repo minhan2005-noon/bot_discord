@@ -1,37 +1,37 @@
 # bot_discord
 
-Bot Discord slash command bang Python va ban nang cao bang Node.js.
+Bot Discord dùng slash command, gồm một bản Python đơn giản và một bản Node.js nâng cao.
 
-## Ban Python
+## Bản Python
 
-File chinh:
+File chính:
 
 ```text
 bot.py
 ```
 
-Lenh dang co:
+Lệnh đang có:
 
-- `/ping` - kiem tra bot online va latency.
-- `/help` - xem danh sach lenh.
-- `/embed` - gui tin nhan embed tuy chinh.
-- `/say` - bot gui tin nhan thuong.
-- `/clear` - xoa 1-100 tin nhan, can quyen Manage Messages.
-- `/userinfo` - xem thong tin thanh vien.
-- `/serverinfo` - xem thong tin server.
-- `/avatar` - xem avatar thanh vien.
-- `/uptime` - xem bot da chay bao lau.
-- `/ai` - hoi AI bang Groq hoac OpenAI API.
+- `/ping` - kiểm tra bot có đang online không và xem độ trễ.
+- `/help` - xem danh sách lệnh.
+- `/embed` - gửi tin nhắn embed tùy chỉnh.
+- `/say` - bot gửi tin nhắn thường.
+- `/clear` - xóa 1-100 tin nhắn, cần quyền Manage Messages.
+- `/userinfo` - xem thông tin thành viên.
+- `/serverinfo` - xem thông tin server.
+- `/avatar` - xem avatar thành viên.
+- `/uptime` - xem bot đã chạy bao lâu.
+- `/ai` - hỏi AI bằng Groq hoặc OpenAI API.
 
-## Ban Node.js nang cao
+## Bản Node.js nâng cao
 
-Nam trong:
+Nằm trong:
 
 ```text
 node-bot/
 ```
 
-Co 15 slash commands:
+Có 15 slash commands:
 
 ```text
 /ping
@@ -51,24 +51,24 @@ Co 15 slash commands:
 /ticket
 ```
 
-Doc huong dan chi tiet trong:
+Đọc hướng dẫn chi tiết trong:
 
 ```text
 node-bot/README.md
 ```
 
-## Quy trinh tao bot tu dau
+## Quy trình tạo bot từ đầu
 
-1. Vao Discord Developer Portal:
+1. Vào Discord Developer Portal:
 
 ```text
 https://discord.com/developers/applications
 ```
 
-2. Bam **New Application**, dat ten bot.
-3. Vao **Bot** -> **Add Bot**.
-4. Bam **Reset Token** hoac **View Token**, copy token.
-5. Tao file `.env` trong thu muc project:
+2. Bấm **New Application**, đặt tên bot.
+3. Vào **Bot** -> **Add Bot**.
+4. Bấm **Reset Token** hoặc **View Token**, sau đó copy token.
+5. Tạo file `.env` trong thư mục project:
 
 ```env
 DISCORD_TOKEN=token_cua_bot
@@ -79,7 +79,7 @@ OPENAI_API_KEY=api_key_openai
 OPENAI_MODEL=gpt-5.6-terra
 ```
 
-6. Vao **OAuth2** -> **URL Generator**.
+6. Vào **OAuth2** -> **URL Generator**.
 7. Tick scopes:
 
 ```text
@@ -87,7 +87,7 @@ bot
 applications.commands
 ```
 
-8. Tick bot permissions nen co:
+8. Tick các quyền bot nên có:
 
 ```text
 Send Messages
@@ -97,11 +97,11 @@ Manage Messages
 Use Slash Commands
 ```
 
-9. Copy link OAuth2, mo tren trinh duyet, moi bot vao server.
+9. Copy link OAuth2, mở trên trình duyệt, rồi mời bot vào server.
 
-## Them AI API key
+## Thêm AI API key
 
-Neu key bat dau bang `gsk_`, do la Groq key:
+Nếu key bắt đầu bằng `gsk_`, đó là Groq key:
 
 ```env
 AI_PROVIDER=groq
@@ -109,7 +109,7 @@ GROQ_API_KEY=api_key_groq
 GROQ_MODEL=openai/gpt-oss-20b
 ```
 
-Neu dung OpenAI key:
+Nếu dùng OpenAI key:
 
 ```env
 AI_PROVIDER=openai
@@ -117,7 +117,7 @@ OPENAI_API_KEY=api_key_openai
 OPENAI_MODEL=gpt-5.6-terra
 ```
 
-## Chay ban Python
+## Chạy bản Python
 
 ```bash
 cd /Users/hoangminhan/discord-bot
@@ -127,7 +127,7 @@ python -m pip install -r requirements.txt
 python bot.py
 ```
 
-## Chay ban Node.js
+## Chạy bản Node.js
 
 ```bash
 cd /Users/hoangminhan/discord-bot/node-bot
@@ -136,9 +136,9 @@ npm run deploy
 npm start
 ```
 
-## Luu y
+## Lưu ý
 
-- Khong gui token/API key cho nguoi khac.
-- Neu token/API key tung bi dua vao chat/log, hay revoke/rotate key.
-- Khong commit file `.env`.
-- Neu bot khong hien slash command ngay, doi 1-5 phut roi thu lai.
+- Không gửi token/API key cho người khác.
+- Nếu token/API key từng bị đưa vào chat hoặc log, hãy revoke/rotate key.
+- Không commit file `.env`.
+- Nếu bot chưa hiện slash command ngay, đợi 1-5 phút rồi thử lại.

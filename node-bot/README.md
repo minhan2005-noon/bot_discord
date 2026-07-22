@@ -1,38 +1,38 @@
 # Advanced Discord Bot - Node.js
 
-Bot Discord nang cao bang Node.js + discord.js.
+Bot Discord nâng cao bằng Node.js và discord.js.
 
-## Tinh nang
+## Tính năng
 
 - Utility: `/ping`, `/help`, `/serverinfo`, `/userinfo`, `/avatar`, `/uptime`
-- Message tools: `/say`, `/embed`
+- Công cụ tin nhắn: `/say`, `/embed`
 - AI chat: `/ai`
 - Moderation: `/clear`, `/timeout`, `/kick`, `/ban`
-- Server config: `/config log-channel`, `/config welcome-channel`, `/config ticket-category`, `/config view`
-- Ticket system: `/ticket setup`, `/ticket close`, button tao ticket
-- Events: welcome member moi, log message deleted
-- Storage: JSON database trong `data/db.json`
+- Cấu hình server: `/config log-channel`, `/config welcome-channel`, `/config ticket-category`, `/config view`
+- Ticket system: `/ticket setup`, `/ticket close`, button tạo ticket
+- Events: chào mừng thành viên mới, log tin nhắn bị xóa
+- Storage: lưu cấu hình bằng JSON trong `data/db.json`
 
-## Cau truc file
+## Cấu trúc file
 
 ```txt
 src/
-├─ index.js                 # Dang nhap bot, load command/event
-├─ deploy-commands.js       # Dang ky slash command len Discord
-├─ config.js                # Doc bien moi truong tu .env
-├─ commands/                # Moi file la mot slash command
-├─ events/                  # Xu ly Discord events
-├─ services/aiService.js    # Goi Groq/OpenAI API
-├─ storage/database.js      # Luu config server bang JSON
+├─ index.js                 # Đăng nhập bot, load command/event
+├─ deploy-commands.js       # Đăng ký slash command lên Discord
+├─ config.js                # Đọc biến môi trường từ .env
+├─ commands/                # Mỗi file là một slash command
+├─ events/                  # Xử lý Discord events
+├─ services/aiService.js    # Gọi Groq/OpenAI API
+├─ storage/database.js      # Lưu cấu hình server bằng JSON
 └─ utils/                   # Helper loader, split message
 ```
 
-## Tao bot tren Discord
+## Tạo bot trên Discord
 
-1. Vao `https://discord.com/developers/applications`
-2. Bam **New Application**
-3. Vao **Bot** -> **Add Bot** -> copy token
-4. Vao **OAuth2** -> **URL Generator**
+1. Vào `https://discord.com/developers/applications`
+2. Bấm **New Application**
+3. Vào **Bot** -> **Add Bot** -> copy token
+4. Vào **OAuth2** -> **URL Generator**
 5. Tick scopes:
 
 ```text
@@ -55,9 +55,9 @@ View Channels
 Use Slash Commands
 ```
 
-7. Copy link va moi bot vao server.
+7. Copy link và mời bot vào server.
 
-## Cai dat
+## Cài đặt
 
 ```bash
 cd /Users/hoangminhan/discord-bot/node-bot
@@ -65,7 +65,7 @@ npm install
 cp .env.example .env
 ```
 
-Sua `.env`:
+Sửa `.env`:
 
 ```env
 DISCORD_TOKEN=token_discord
@@ -77,43 +77,43 @@ GROQ_API_KEY=gsk_key_cua_ban
 GROQ_MODEL=openai/gpt-oss-20b
 ```
 
-## Chay
+## Chạy
 
-Dang ky slash commands:
+Đăng ký slash commands:
 
 ```bash
 npm run deploy
 ```
 
-Chay bot:
+Chạy bot:
 
 ```bash
 npm start
 ```
 
-Chay nen:
+Chạy nền:
 
 ```bash
 nohup npm start > bot.log 2>&1 &
 ```
 
-Tat bot:
+Tắt bot:
 
 ```bash
 pkill -f "node --env-file=.env src/index.js"
 ```
 
-## Hoc de thuan thuc
+## Học để thuần thục
 
-1. Hoc JavaScript: object, array, function, async/await, import/export.
-2. Hoc Node.js: npm, package.json, env, fs, module.
-3. Hoc discord.js: Client, intents, events, slash commands, embeds, permissions.
-4. Hoc API integration: Groq/OpenAI, error handling, rate limit.
-5. Hoc database: bat dau JSON, sau do len SQLite/PostgreSQL.
-6. Hoc deploy: VPS, PM2, Docker, log, restart.
+1. Học JavaScript: object, array, function, async/await, import/export.
+2. Học Node.js: npm, package.json, env, fs, module.
+3. Học discord.js: Client, intents, events, slash commands, embeds, permissions.
+4. Học API integration: Groq/OpenAI, error handling, rate limit.
+5. Học database: bắt đầu bằng JSON, sau đó lên SQLite/PostgreSQL.
+6. Học deploy: VPS, PM2, Docker, log, restart.
 
-## Luu y bao mat
+## Lưu ý bảo mật
 
-- Khong commit `.env`.
-- Token Discord va API key phai xem nhu mat khau.
-- Neu key da bi paste vao chat/log, hay revoke/rotate key.
+- Không commit `.env`.
+- Token Discord và API key phải được xem như mật khẩu.
+- Nếu key đã bị paste vào chat hoặc log, hãy revoke/rotate key.
