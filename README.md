@@ -1,8 +1,16 @@
-# Help Embed Discord Bot
+# bot_discord
 
-Bot Discord slash command bang Python.
+Bot Discord slash command bang Python va ban nang cao bang Node.js.
 
-## Lenh dang co
+## Ban Python
+
+File chinh:
+
+```text
+bot.py
+```
+
+Lenh dang co:
 
 - `/ping` - kiem tra bot online va latency.
 - `/help` - xem danh sach lenh.
@@ -14,6 +22,40 @@ Bot Discord slash command bang Python.
 - `/avatar` - xem avatar thanh vien.
 - `/uptime` - xem bot da chay bao lau.
 - `/ai` - hoi AI bang Groq hoac OpenAI API.
+
+## Ban Node.js nang cao
+
+Nam trong:
+
+```text
+node-bot/
+```
+
+Co 15 slash commands:
+
+```text
+/ping
+/help
+/ai
+/embed
+/say
+/serverinfo
+/userinfo
+/avatar
+/uptime
+/clear
+/timeout
+/kick
+/ban
+/config
+/ticket
+```
+
+Doc huong dan chi tiet trong:
+
+```text
+node-bot/README.md
+```
 
 ## Quy trinh tao bot tu dau
 
@@ -59,7 +101,7 @@ Use Slash Commands
 
 ## Them AI API key
 
-Neu key bat dau bang `gsk_`, do la Groq key. Dung cau hinh nay:
+Neu key bat dau bang `gsk_`, do la Groq key:
 
 ```env
 AI_PROVIDER=groq
@@ -67,16 +109,7 @@ GROQ_API_KEY=api_key_groq
 GROQ_MODEL=openai/gpt-oss-20b
 ```
 
-Neu dung OpenAI key, dung cau hinh nay:
-
-1. Vao OpenAI Platform:
-
-```text
-https://platform.openai.com/api-keys
-```
-
-2. Tao API key moi.
-3. Dan key vao `.env`:
+Neu dung OpenAI key:
 
 ```env
 AI_PROVIDER=openai
@@ -84,58 +117,28 @@ OPENAI_API_KEY=api_key_openai
 OPENAI_MODEL=gpt-5.6-terra
 ```
 
-4. Restart bot.
-
-Dung lenh AI trong Discord:
-
-```text
-/ai prompt: viet gi do
-```
-
-Mac dinh cau tra loi chi hien voi nguoi goi lenh. Chon `public: True` neu muon hien cho ca kenh.
-
-## Cai dat tren may
+## Chay ban Python
 
 ```bash
 cd /Users/hoangminhan/discord-bot
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
-```
-
-## Chay bot
-
-Chay foreground de xem log truc tiep:
-
-```bash
-cd /Users/hoangminhan/discord-bot
-source .venv/bin/activate
 python bot.py
 ```
 
-Chay nen va ghi log:
+## Chay ban Node.js
 
 ```bash
-cd /Users/hoangminhan/discord-bot
-.venv/bin/python -u bot.py >> bot.log 2>&1 &
-```
-
-Kiem tra log:
-
-```bash
-tail -f bot.log
-```
-
-Tat bot:
-
-```bash
-pkill -f "python.*bot.py"
+cd /Users/hoangminhan/discord-bot/node-bot
+npm install
+npm run deploy
+npm start
 ```
 
 ## Luu y
 
-- Khong gui token cho nguoi khac.
-- Neu token Discord tung bi dua vao `.env.example` hoac chat/log, hay reset token trong Discord Developer Portal.
+- Khong gui token/API key cho nguoi khac.
+- Neu token/API key tung bi dua vao chat/log, hay revoke/rotate key.
 - Khong commit file `.env`.
 - Neu bot khong hien slash command ngay, doi 1-5 phut roi thu lai.
-- Lenh `/clear` can bot co quyen **Manage Messages** trong server.
