@@ -102,18 +102,3 @@ Tắt bot:
 ```bash
 pkill -f "node --env-file=.env src/index.js"
 ```
-
-## Học để thuần thục
-
-1. Học JavaScript: object, array, function, async/await, import/export.
-2. Học Node.js: npm, package.json, env, fs, module.
-3. Học discord.js: Client, intents, events, slash commands, embeds, permissions.
-4. Học API integration: Groq/OpenAI, error handling, rate limit.
-5. Học database: bắt đầu bằng JSON, sau đó lên SQLite/PostgreSQL.
-6. Học deploy: VPS, PM2, Docker, log, restart.
-
-## Lưu ý bảo mật
-
-- Không commit `.env`.
-- Token Discord và API key phải được xem như mật khẩu.
-- Nếu key đã bị paste vào chat hoặc log, hãy revoke/rotate key.
