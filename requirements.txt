@@ -1,0 +1,4 @@
+discord.py==2.7.1
+python-dotenv==1.2.2
+certifi==2026.6.17
+openai==2.45.0

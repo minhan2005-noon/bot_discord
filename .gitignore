@@ -1,0 +1,11 @@
+.DS_Store
+.env
+.venv/
+__pycache__/
+*.pyc
+bot.log
+node_modules/
+node-bot/node_modules/
+node-bot/.env
+node-bot/data/
+node-bot/bot.log
